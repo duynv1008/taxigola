@@ -14,7 +14,7 @@ export default class Splash extends Component{
   componentDidMount() {
     setTimeout(() => {
         Actions.Login();
-    }, 1000);
+    }, 2000);
     if(this.state.timePassed){
         
     }

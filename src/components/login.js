@@ -35,8 +35,8 @@ export default class Login extends Component {
   }
   render() {
     return (
-      <ScrollView>
-        <Container style={{ flex: 1 }}>
+        <Container  style={{ flex: 1 }}>
+        <ScrollView style={{ flex: 1 }}>
           <View style={[styles.header]}>
             <Image
               source={require("../images/bg.png")}
@@ -73,7 +73,7 @@ export default class Login extends Component {
                 />
                 <Input placeholder="Email" placeholderTextColor="#959595" autoCorrect={false}
                 returnKeyType={"next"}
-                onSubmitEditing={(event) => { this.refs.passwordInput._root.focus(); }}/>
+                onSubmitEditing={(event) => { this.refs.passwordInput._root.focus(); }} style={{padding:0}}/>
               </Item>
               <Item rounded style={styles.itemInput}>
                 <Icon
@@ -83,7 +83,7 @@ export default class Login extends Component {
                 />
                 <Input placeholder="Password" placeholderTextColor="#959595" autoCorrect={false}
                 returnKeyType={"done"}
-                ref='passwordInput' secureTextEntry={this.state.showPassword}/>
+                ref='passwordInput' secureTextEntry={this.state.showPassword} style={{padding:0}}/>
                 <Switch
                   onValueChange={this.toggleSwitch}
                   value={!this.state.showPassword}
@@ -109,8 +109,8 @@ export default class Login extends Component {
             <Text style={{ color: "#959595",fontSize: 13 }}>Don't have an account? </Text>
             <Text style={{ color: "#0088ff",fontSize: 13 }}>Sign Up</Text>
           </View>
+        </ScrollView>
         </Container>
-      </ScrollView>
     );
   }
 }
@@ -156,6 +156,6 @@ const styles = StyleSheet.create({
     flex: 0,
     flexDirection: "row",
     justifyContent: "center",
-    marginBottom: 10
+    paddingBottom: 10
   }
 });
